@@ -1063,7 +1063,7 @@ void tp_init()
   #if defined(FAN_PIN) && (FAN_PIN > -1) 
     SET_OUTPUT(FAN_PIN);
     #ifdef FAST_PWM_FAN
-    setPwmFrequency(FAN_PIN, 1); // No prescaling. Pwm frequency = F_CPU/256/8
+    setPwmFrequency(FAN_PIN, 5); // https://github.com/prusa3d/Prusa-Firmware/issues/460#issuecomment-417835715
     #endif
     #ifdef FAN_SOFT_PWM
     soft_pwm_fan = fanSpeedSoftPwm / 2;
